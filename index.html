@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sábado de Dragões!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./dragao-favicon.png">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Vamos voar juntos no sábado? 🐉</h1>
+            <p class="question">Preparada para viver uma aventura dracônica comigo, Ary?</p>
+        </header>
+        <main>
+            <!-- Imagem principal do filme "Como Treinar Seu Dragão" (agora um GIF) -->
+            <img src="https://i.makeagif.com/media/10-10-2023/VDx09R.gif" alt="Dragão voando em GIF" class="dragon-image">
+            <div class="buttons">
+                <button id="yesBtn" class="btn-primary">Vamos voar! 🔥</button>
+                <button id="noBtn" class="btn-secondary">Não treinei meu dragão 😥</button>
+            </div>
+            <p id="message" class="hidden"></p>
+            <p id="mimoInstructions" class="hidden">Tenho um item especial para essa aventura! Ele estará com você no sábado. 💫</p>
+            <button id="whatsappBtn" class="whatsapp-btn hidden">Envie seu pergaminho!📲</button>
+        </main>
+        <footer>
+            <p>Criado para um voo que vai além do imaginável.✨</p>
+            <button id="backBtn" class="hidden">retornar à Berk! 🗺</button>
+        </footer>
+    </div>
+    <div class="audio-controls">
+        <audio id="dragonMusic" src="./How To Train Your Dragon： Test Drive Extended.mp3" autoplay loop controls></audio>
+        <audio id="shrekMusic" src="./La Vida Loca ｜ A música final do Gato e do Burro ｜ Shrek 2 ｜ Clipe.mp3" loop></audio>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

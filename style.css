@@ -1,0 +1,275 @@
+html, body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* Fundo de papiro */
+    background: url('https://i.pinimg.com/originals/6b/e5/fc/6be5fced18e877fed77f3c6bc2ccf5ea.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    text-align: center;
+    min-height: 100vh;
+    display: flex; /* Adicionado para centralizar o container */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    /* Cursor personalizado: Certifique-se que './dragao-favicon.png' está na mesma pasta
+       Se o cursor não aparecer, verifique o caminho do arquivo e o formato da imagem.
+       GIFs animados podem ter suporte limitado em alguns navegadores para cursores. */
+    cursor: url('./dragao-favicon.png'), auto;
+}
+
+/* Estilo do container principal */
+.container {
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semi-transparente */
+    padding: 2rem;
+    max-width: 700px;
+    width: 90%; /* Responsividade: ocupa 90% da largura disponível */
+    margin: 2rem auto; /* Centraliza horizontalmente e adiciona margem vertical */
+    border-radius: 16px;
+    border: 3px solid #654321; /* Borda marrom */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box; /* Garante que padding e borda sejam incluídos na largura */
+}
+
+/* Estilos do cabeçalho */
+header h1 {
+    font-size: 2rem; /* Reduzido um pouco o tamanho em geral */
+    color: #1b1b1b;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+/* Estilos das imagens */
+.dragon-image {
+    max-width: 100%; /* Garante que a imagem não exceda o container */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    border: 2px solid #654321;
+}
+
+/* Estilo para as instruções do mimo (agora sem imagem) */
+#mimoInstructions {
+    font-size: 1.1rem;
+    color: #444;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem; /* Espaçamento antes do botão de voltar */
+    font-weight: bold;
+}
+
+.question {
+    font-size: 1.1rem;
+    margin: 1rem 0;
+    line-height: 1.5;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column; /* Botões empilhados em telas pequenas */
+    gap: 1rem; /* Espaçamento entre os botões */
+    margin-top: 1.5rem;
+}
+
+/* Media query para telas maiores: botões lado a lado */
+@media (min-width: 600px) {
+    .buttons {
+        flex-direction: row; /* Botões lado a lado em telas maiores */
+        justify-content: center;
+    }
+
+    header h1 {
+        font-size: 2.2rem; /* Recupera o tamanho em telas maiores */
+    }
+
+    header p {
+        font-size: 1.2rem;
+    }
+
+    .question {
+        font-size: 1.2rem;
+    }
+}
+
+.buttons button {
+    flex: 1; /* Permite que os botões cresçam para preencher o espaço */
+    padding: 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transição para todas as propriedades */
+    background-size: cover;
+    background-position: center;
+    color: #fff; /* Texto branco para contraste com as escamas */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Sombra no texto para legibilidade */
+    border: 2px solid #5A2D0C; /* Borda escura para as escamas */
+}
+
+/* Texturas de escamas de dragão para os botões (URLs proporcionadas) */
+.btn-primary {
+    background-image: url('https://st.depositphotos.com/1002277/2862/i/450/depositphotos_28629363-stock-photo-dragon-skin.jpg');
+    background-color: rgba(0, 0, 0, 0.3); /* Adiciona uma camada escura para melhorar o contraste do texto */
+}
+
+.btn-secondary {
+    background-image: url('https://img.freepik.com/fotos-premium/textura-de-escama-de-dragao-ilustracao-3d-de-fundo-abstrato-escuro_200694-436.jpg');
+    background-color: rgba(0, 0, 0, 0.5); /* Adiciona uma camada escura mais forte para o botão secundário */
+}
+
+/* Efeitos de HOVER para os botões */
+.buttons button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Efeito de FOGO no botão SIM ao passar o mouse */
+.btn-primary:hover {
+    background-image: url('https://i.makeagif.com/media/7-12-2015/8UMjFE.gif'); /* GIF de FOGO */
+    background-color: rgba(255, 69, 0, 0.6); /* Cor de fogo semi-transparente */
+    background-size: cover; /* Garante que o GIF cubra o botão */
+    background-position: center;
+}
+
+/* Efeito de ÁGUA no botão NÃO ao passar o mouse */
+.btn-secondary:hover {
+    background-image: url('https://i.pinimg.com/originals/b3/82/f1/b382f1412d45ed2bbf50bc37863566c6.gif'); /* GIF de ÁGUA */
+    background-color: rgba(0, 191, 255, 0.6); /* Cor de água semi-transparente */
+    background-size: cover;
+    background-position: center;
+}
+
+#message {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #b200c2; /* Verde padrão para mensagens positivas */
+}
+
+/* Classe para esconder elementos */
+.hidden {
+    display: none;
+}
+
+/* Estilos do rodapé */
+footer {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: #777;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Estilo do botão "Voltar ao Início" */
+#backBtn {
+    background-color: #e900008a;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#backBtn:hover {
+    background-color: #000000;
+}
+
+/* Estilos para os controles de áudio */
+.audio-controls {
+    position: fixed; /* Fixo no final da página */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* Fundo semi-transparente, um pouco mais discreto */
+    padding: 0.3rem; /* Reduzido o padding */
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem; /* Reduzido o espaçamento entre os controles */
+    box-sizing: border-box;
+    z-index: 10; /* Garante que esteja por cima de outros elementos */
+    border-top-left-radius: 10px; /* Cantos arredondados na parte superior */
+    border-top-right-radius: 10px;
+}
+
+.audio-controls audio {
+    width: 45%; /* Aproximadamente metade do largura para cada controle em telas pequenas */
+    max-width: 250px; /* Largura máxima para evitar que sejam muito grandes */
+    height: 30px; /* Altura fixa para os controles */
+}
+
+/* Para esconder completamente os controles de áudio, descomente a linha abaixo */
+/* .audio-controls {
+    display: none;
+} */
+
+/* Estilos para o botão de WhatsApp */
+.whatsapp-btn {
+    background-color: #25D366; /* Cor verde do WhatsApp */
+    color: #000000;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin-top: 1.5rem; /* Espaçamento acima do botão */
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E; /* Verde mais escuro no hover */
+}
+
+/* Media query para ajustar o layout dos controles de áudio em telas maiores */
+@media (min-width: 768px) {
+    .audio-controls audio {
+        width: auto; /* Largura automática em telas maiores */
+        max-width: none;
+        height: 35px; /* Altura um pouco maior em telas grandes */
+    }
+
+    .audio-controls {
+        justify-content: flex-start; /* Alinhar à esquerda em telas maiores */
+        padding-left: 2rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+}
+
+/* Animação para o botão "Não" sumir */
+@keyframes shrinkAndFade {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+        width: 0;
+        height: 0;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+}
+
+.shrink-fade {
+    animation: shrinkAndFade 0.5s forwards;
+}
+
+/* Animação para o Shrek aparecer */
+@keyframes shrekBounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.05); opacity: 1; }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+.shrek-animation {
+    animation: shrekBounceIn 0.8s ease-out forwards;
+}
