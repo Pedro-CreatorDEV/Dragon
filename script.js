@@ -42,13 +42,13 @@ document.addEventListener('DOMContentLoaded', () => {
         noBtn.style.top = `${randomY}px`;
     };
 
- // Evento para o botão "SIM"
+    // Evento para o botão "SIM"
     if (yesBtn) {
         yesBtn.addEventListener('click', () => {
             // Pausa a música do dragão
             if (dragonMusic) dragonMusic.pause();
 
-            // Define o ponto de início da música do Shrek para 3 segundos e a reproduz
+            // Define o ponto de início da música do Shrek para 6 segundos e a reproduz
             if (shrekMusic) {
                 shrekMusic.currentTime = 6; // Define o tempo de início para 6 segundos
                 shrekMusic.play().catch(error => console.log("Erro ao reproduzir música do Shrek:", error));
@@ -58,33 +58,33 @@ document.addEventListener('DOMContentLoaded', () => {
             questionText.classList.add('hidden');
             buttonsDiv.classList.add('hidden');
 
-            // Atualiza o cabeçalho para a confirmação
-            headerTitle.textContent = 'Vamboraaaa! 🎉'; // Título de confirmação atualizado
-            headerSubtitle.textContent = 'Mal posso esperar para descolar no sábado!'; // Subtítulo de confirmação atualizado
+            // Atualiza o cabeçalho para a confirmação (texto do seu HTML)
+            headerTitle.textContent = 'Vamboraaaa! 🎉';
+            headerSubtitle.textContent = 'Mal posso esperar para descolar no sábado!';
 
             // Atualiza a imagem principal para o Shrek e adiciona animação
             dragonImage.src = 'https://wallpapersok.com/images/high/shrek-making-a-funny-face-1lawv7i17eeg10xw.jpg';
             dragonImage.alt = 'Shrek a fazer uma cara engraçada';
             dragonImage.classList.add('shrek-animation'); // Adiciona classe para animação
 
-            // Atualiza e mostra a mensagem de confirmação
-            message.textContent = 'Prepare-se para um sábado lendário! A diversão está garantida! 🎉'; // Mensagem de confirmação atualizada
-            message.style.color = '#28A745';
+            // Atualiza e mostra a mensagem de confirmação (texto do seu HTML)
+            message.textContent = 'Prepare-se para um sábado lendário! A diversão está garantida! 🎉';
+            message.style.color = '#28A745'; // Cor original para manter a consistência com o CSS
             message.classList.remove('hidden');
 
-            // Mostra as instruções do mimo
+            // Mostra as instruções do mimo (texto do seu HTML)
             mimoInstructions.classList.remove('hidden');
 
-            // Mostra o botão de voltar e o botão de WhatsApp
+            // Mostra o botão de voltar e o botão de WhatsApp (texto do seu HTML)
             backBtn.classList.remove('hidden');
             whatsappBtn.classList.remove('hidden');
         });
     }
 
-    // Evento para o botão "NÃO" (ao passar o rato)
+    // Evento para o botão "NÃO" (ao passar o mouse)
     if (noBtn) {
         noBtn.addEventListener('mouseover', () => {
-            // O botão "Não" fugirá em todas as larguras de ecrã
+            // O botão "Não" fugirá em todas as larguras de tela
             moveNoButton();
         });
 
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 questionText.classList.add('hidden');
 
                 // Atualiza e mostra a mensagem de brincadeira
-                message.textContent = 'Ops! Parece que o botão "Não" fugiu... 😏\nSó existe uma resposta certa aqui!';
+                message.textContent = 'Ah, não! Parece que o portal para a diversão se fechou... Mas a magia sempre encontra um caminho! 😉';
                 message.style.color = '#dc3545';
                 message.classList.remove('hidden');
 
@@ -131,7 +131,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (whatsappBtn) {
         whatsappBtn.addEventListener('click', () => {
             const phoneNumber = '5511949211730'; // Substitua pelo seu número de telefone (ex: 5511999998888)
-            const whatsappMessage = encodeURIComponent('Pelos céus e reinos distantes! Eu aceito o desafio de sábado! Que a nossa aventura comece!);
+            // Mensagem do WhatsApp com tom de fantasia DreamWorks (texto do seu HTML)
+            const whatsappMessage = encodeURIComponent('Pelos céus e reinos distantes! Eu aceito o desafio de sábado! Que a nossa aventura comece!'); // CORRIGIDO: Adicionada a aspa final
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
             window.open(whatsappUrl, '_blank'); // Abre em uma nova aba/janela
         });
